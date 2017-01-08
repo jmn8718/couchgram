@@ -1,0 +1,24 @@
+{
+  "name": "couchgram",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "enzyme": "^2.7.0",
+    "react-addons-test-utils": "^15.4.2",
+    "react-scripts": "0.8.4"
+  },
+  "dependencies": {
+    "immutable": "^3.8.1",
+    "pouchdb": "^6.1.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-mdl": "^1.9.0",
+    "react-router": "^3.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
