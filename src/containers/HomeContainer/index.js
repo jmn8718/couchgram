@@ -3,9 +3,7 @@ import PouchDB from 'pouchdb';
 import { fromJS, List } from 'immutable';
 import { Button, Grid, Cell, Textfield } from 'react-mdl';
 
-
-import logo from '../../logo.svg';
-import './index.css';
+import TodoList from '../../components/TodoList';
 
 class HomeContainer extends Component {
   constructor(props) {
@@ -85,25 +83,10 @@ class HomeContainer extends Component {
     }
     this.state.db.put(todoWithAt).then((d) => console.log(d)).catch((error) => console.log(error))
   }
-
-  renderRow = (row) => {
-    console.log(row.get('doc').toJS())
-    if (row.hasIn(['doc', '_attachments'])) {
-      // this.state.db.getAttachment(row.get('id'), 'file')
-      //   .then((blobOrBuffer) => console.log(blobOrBuffer, URL.createObjectURL(blobOrBuffer)))
-      //   .catch((error) => console.log('error', error))
-      // const src = URL.createObjectURL(row.getIn(['doc', '_attachments', 'file', 'data']))
-      // console.log(src)
-      return <div key={row.get('id')}>with at {row.get('id')} - <img src={row.get('file')} width="200" /></div>;
-    } else {
-      return <div key={row.get('id')}>{row.get('id')} - {row.getIn(['doc', 'title'], '__')}</div>;
-    }
-  }
+  
   render() {
     return (
-      <div className="App">        
-        <div>{process.env.NODE_ENV}</div>
-        <div>{process.env.REACT_APP_SECRET_CODE}</div>
+      <div>
         <Grid>
           <Cell col={10}>
             <Textfield
@@ -123,7 +106,7 @@ class HomeContainer extends Component {
             -
           </Cell>
           <Cell col={8}>
-            {this.state.rows.map(this.renderRow)}
+            <TodoList data={this.state.rows} />
           </Cell>
           <Cell col={2}>
             -
