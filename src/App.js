@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Layout, Header, Navigation, Drawer, Content } from 'react-mdl';
+import { Layout, Navigation, Drawer, Content } from 'react-mdl';
+import NavigationBar from './components/NavigationBar';
 
 export default class App extends Component {
   renderNavigation = () => (
@@ -7,12 +8,13 @@ export default class App extends Component {
       <a href="">Link</a>
     </Navigation>
   );
+
   renderHeader = () => (
-    <Header
+    <NavigationBar
       title="Couchgram"
     >
       {this.renderNavigation()}
-    </Header>
+    </NavigationBar>
   );
 
   renderDrawer = () => (
@@ -25,7 +27,6 @@ export default class App extends Component {
     return (
       <Layout fixedHeader>
         {this.renderHeader()}
-        {this.renderDrawer()}
         <Content>
           {this.props.children}
         </Content>
