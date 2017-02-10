@@ -9,8 +9,8 @@ const UploadDialog = ({ openDialog, onClickCancel, onClickUpload, children }) =>
         {children}
       </DialogContent>
       <DialogActions>
-        <Button type='button' onClick={onClickUpload}>Agree</Button>
-        <Button type='button' onClick={onClickCancel}>Disagree</Button>
+        <Button type='button' onClick={onClickUpload}>Upload</Button>
+        <Button type='button' onClick={onClickCancel}>Cancel</Button>
       </DialogActions>
     </Dialog>
   );
@@ -28,4 +28,5 @@ UploadDialog.defaultProps = {
   onClickCancel: () => {},
   onClickUpload: () => {},
 };
+
 export default UploadDialog;

@@ -26,6 +26,16 @@ const HeaderWrapper = styled.div`
   flex-direction: row;
 `;
 
+const ImageWrapper = styled.div`
+  border-bottom: 1px solid #efefef;
+  border-top: 1px solid #efefef;
+  box-shadow: inset 0 0 20px 0 #efefef;
+  width: 100%;
+  & img {
+    max-width: 100%;
+  }
+`;
+
 const FooterWrapper = styled.div`
   @media (min-width: 736px) {
     padding: 0 24px;
@@ -45,7 +55,9 @@ const TodoItem = ({ src }) => (
     <HeaderWrapper>
       Author
     </HeaderWrapper>
-    <img src={src} style={{ maxWidth: '100%' }} role="presentation" />
+    <ImageWrapper>
+      <img src={src} role="presentation" />
+    </ImageWrapper>
     <FooterWrapper>
       <div>Likes</div>
       <div>comment</div>
